@@ -75,7 +75,7 @@ export function RiskAssessmentModal({
     }
   }, [visible, riskLevel, handleUrgentAction])
 
-  
+    
   if (!riskAssessment) return null
 
   const riskColors = getRiskLevelColor(riskAssessment.riskLevel)
