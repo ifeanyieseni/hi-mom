@@ -40,14 +40,6 @@ export default function TabsLayout() {
           ),
         }}
       />
-
-      <Tabs.Screen
-        name='visit'
-        options={{
-          title: 'Visit',
-          href: null, 
-        }}
-      />
     </Tabs>
   )
 }

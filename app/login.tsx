@@ -68,6 +68,9 @@ export default function LoginScreen() {
         <TouchableOpacity
           onPress={() => router.push('/language')}
           className='flex-row items-center bg-white px-3 py-2 rounded-lg shadow-sm'
+          accessible={true}
+          accessibilityRole='button'
+          accessibilityLabel='Change language'
         >
           <Globe size={18} color='#2B7A78' />
           <Text className='ml-2 text-sm text-gray-700'>EN</Text>
@@ -103,6 +106,10 @@ export default function LoginScreen() {
               placeholder='•'
               placeholderTextColor='#9CA3AF'
               returnKeyType={idx === 3 ? 'done' : 'next'}
+              accessible={true}
+              accessibilityRole='text'
+              accessibilityLabel={`PIN digit ${idx + 1}`}
+              accessibilityHint='Enter a single digit for your PIN'
             />
           ))}
         </View>
@@ -120,6 +127,11 @@ export default function LoginScreen() {
         onPress={handleLogin}
         className='w-full max-w-xs h-14 bg-primary-500 rounded-xl items-center justify-center shadow-lg'
         disabled={pin.length !== 4}
+        accessible={true}
+        accessibilityRole='button'
+        accessibilityLabel='Login with PIN'
+        accessibilityHint='Tap to login with your 4-digit PIN'
+        accessibilityState={{ disabled: pin.length !== 4 }}
       >
         <Text className='text-white text-lg font-bold'>Login</Text>
       </TouchableOpacity>
