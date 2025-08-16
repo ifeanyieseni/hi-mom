@@ -1,0 +1,224 @@
+{
+  "DemographicAndContactInformation": {
+    "womanFullName": "string",
+    "age": "number",
+    "villageAddress": "string",
+    "state": "string",
+    "lga": "string",
+    "bloodType": {
+      "type": "enum",
+      "options": ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"]
+    },
+    "womanPhoneNumber": "string",
+    "husbandName": "string",
+    "husbandPhoneNumber": "string",
+    "womanOccupation": "string",
+    "husbandOccupation": "string",
+    "womanEducationLevel": {
+      "type": "enum",
+      "options": ["No formal education", "Primary school", "Secondary school", "Tertiary education", "Postgraduate"]
+    },
+    "husbandEducationLevel": {
+      "type": "enum",
+      "options": ["No formal education", "Primary school", "Secondary school", "Tertiary education", "Postgraduate"]
+    },
+    "maritalStatus": {
+      "type": "enum",
+      "options": ["Single", "Married", "Divorced", "Widowed"]
+    },
+    "emergencyContactName": "string",
+    "emergencyContactRelationship": "string"
+  },
+  "ObstetricHistory": {
+    "totalPregnancies": "number",
+    "numberOfLiveBirths": "number",
+    "numberOfPreviousDeliveries": {
+      "type": "enum",
+      "options": ["0", "1", "2", "3+"]
+    },
+    "previousAbortions": {
+      "hasAbortions": "boolean",
+      "countIfYes": "number"
+    },
+    "previousStillbirths": "boolean",
+    "previousCesareanSections": {
+      "hadCesarean": "boolean",
+      "countIfYes": "number"
+    },
+    "previousVacuumForcepsDelivery": "boolean",
+    "previousAPHPPH": "boolean",
+    "previousEclampsiaPreeclampsia": "boolean",
+    "previousSymphysiotomyFistulaRepair": "boolean",
+    "lastMenstrualPeriod": "date",
+    "estimatedDateOfDelivery": "date",
+    "lastBirthWeightKg": "number",
+    "intervalSinceLastDeliveryYears": "number"
+  },
+  "MedicalHistory": {
+    "hypertension": "boolean",
+    "diabetes": "boolean",
+    "asthma": "boolean",
+    "epilepsy": "boolean",
+    "kidneyRenalDisease": "boolean",
+    "sickleCellDisease": "boolean",
+    "sickleCellTrait": "boolean",
+    "tuberculosis": "boolean",
+    "heartDisease": "boolean",
+    "thyroidProblems": "boolean",
+    "chronicAnaemia": "boolean",
+    "bloodTransfusions": "boolean",
+    "hivStatus": {
+      "type": "enum",
+      "options": ["Positive", "Negative", "Unknown/Not Tested"]
+    },
+    "hepatitisBStatus": {
+      "type": "enum",
+      "options": ["Positive", "Negative", "Unknown/Not Tested"]
+    },
+    "recentMalariaEpisodes": "boolean",
+    "otherChronicIllnessOrMedications": "string"
+  },
+  "CurrentPregnancyDetails": {
+    "currentGestationWeeks": "number",
+    "bloodPressure": "string",
+    "weight": "number",
+    "fundalHeight": "number",
+    "fetalHeartRate": "number",
+    "fetalMovement": {
+      "type": "enum",
+      "options": ["Good", "Reduced", "Absent"]
+    },
+    "urineTest": "string",
+    "notes": "string",
+    "trackPerVisit": true
+  },
+  "LaboratoryInvestigations": {
+    "bloodGroupAndRhesus": "string",
+    "haemoglobinLevel": "number",
+    "hivTestResult": {
+      "result": {
+        "type": "enum",
+        "options": ["Positive", "Negative", "Pending"]
+      },
+      "dateTested": "date"
+    },
+    "syphilisTestResult": {
+      "result": {
+        "type": "enum",
+        "options": ["Positive", "Negative", "Pending"]
+      },
+      "dateTested": "date"
+    },
+    "hepatitisBTestResult": {
+      "result": {
+        "type": "enum",
+        "options": ["Positive", "Negative", "Pending"]
+      },
+      "dateTested": "date"
+    },
+    "malariaTestResult": {
+      "result": {
+        "type": "enum",
+        "options": ["Positive", "Negative", "N/A"]
+      },
+      "dateTested": "date"
+    }
+  },
+  "DeliveryPlan": {
+    "plannedDeliveryPlace": {
+      "type": "enum",
+      "options": ["Home", "Health Facility", "Other"],
+      "specifyIfOther": "string",
+      "facilityNameIfKnown": "string"
+    },
+    "transportPlanForEmergencies": "boolean"
+  },
+  "RiskAssessment": {
+    "identifiedRisks": {
+      "hasRisks": "boolean",
+      "specifyRisks": "string"
+    },
+    "referralToHigherFacility": {
+      "isReferred": "boolean",
+      "reasonIfYes": "string"
+    },
+    "healthEducationTopics": {
+      "nutritionDuringPregnancy": "boolean",
+      "dangerSignsInPregnancy": "boolean",
+      "birthPreparedness": "boolean",
+      "exclusiveBreastfeeding": "boolean",
+      "familyPlanning": "boolean",
+      "postnatalCare": "boolean",
+      "infantCare": "boolean",
+      "malariaPrevention": "boolean",
+      "hivPreventionPMTCT": "boolean",
+      "other": {
+        "checked": "boolean",
+        "details": "string"
+      }
+    }
+  },
+  "PatientMetadata": {
+    "patientId": "string",
+    "registrationDate": "date",
+    "visitType": {
+      "type": "enum",
+      "options": ["first", "follow-up"]
+    },
+    "visitDate": "date",
+    "createdAt": "date",
+    "updatedAt": "date",
+    "riskLevel": {
+      "type": "enum",
+      "options": ["low", "medium", "high", "unknown"]
+    },
+    "nextAppointment": "date",
+    "imageUrl": "string",
+    "archived": "boolean"
+  },
+  "AdditionalFields": {
+    "conditions": "string[]",
+    "medications": [
+      {
+        "name": "string",
+        "dosage": "string",
+        "frequency": "string"
+      }
+    ],
+    "allergies": "string[]",
+    "vitals": {
+      "bloodPressure": "string",
+      "temperature": "number",
+      "heartRate": "number",
+      "respirationRate": "number",
+      "oxygenSaturation": "number"
+    },
+    "presentation": {
+      "type": "enum",
+      "options": ["cephalic", "breech", "transverse"]
+    },
+    "edema": {
+      "type": "enum",
+      "options": ["none", "mild", "moderate", "severe"]
+    },
+    "urineTests": {
+      "protein": {
+        "type": "enum",
+        "options": ["+", "++", "+++", "-"]
+      },
+      "glucose": {
+        "type": "enum",
+        "options": ["+", "++", "+++", "-"]
+      }
+    },
+    "complaints": "string[]",
+    "interventions": "string[]",
+    "familyHistory": "string[]",
+    "surgeries": [
+      {
+        "type": "string",
+        "date": "date"
+      }
+    ]
+  }
+} 
